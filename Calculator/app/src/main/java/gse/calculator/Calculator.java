@@ -14,6 +14,7 @@ public class Calculator {
     private String result = "";
     private ArrayList<Character> expression = new ArrayList<>();
     private boolean hasDot = false;
+    private int leftBracketCount = 0;
     private Character lastInputCharactor = null;
 
     public Calculator(){
@@ -61,10 +62,12 @@ public class Calculator {
                 expression.add(ch);
             }else if (ch == '('){
                 expression.add(ch);
+                leftBracketCount++;
             }else if (ch == '.'){
                 expression.add('0');
                 expression.add(ch);
             }else if (isOperator(ch)){
+                expression.add('0');
                 expression.add(ch);
             }else{
                 //error
@@ -75,6 +78,7 @@ public class Calculator {
             if (ch == '('){
                 if (checkLeftBracketIsValidInput(ch)){
                     hasDot = false;
+                    leftBracketCount++;
                 }else{
                     throw new CalcException("Input invalid!");
                 }
@@ -92,10 +96,13 @@ public class Calculator {
                 if (!checkRightBracketIsValidInput(ch)){
                     throw new CalcException("Input invalid!");
                 }
+                hasDot = false;
+                leftBracketCount--;
             }else if (isOperator(ch)){
                 if (!checkOperatorIsValidInput(ch)) {
                     throw new CalcException("Input invalid!");
                 }
+                hasDot = false;
             }else{
                 throw new CalcException("Input invalid!");
             }
@@ -111,7 +118,7 @@ public class Calculator {
 
     private boolean checkRightBracketIsValidInput(char ch) {
         assert(lastInputCharactor != null);
-        return Character.isDigit(lastInputCharactor);
+        return leftBracketCount > 0 && Character.isDigit(lastInputCharactor);
     }
 
     private boolean checkDigitIsValidInput(char ch) {
@@ -121,7 +128,7 @@ public class Calculator {
 
     private boolean checkDotIsValidInput(char ch) {
         assert(lastInputCharactor != null);
-        return Character.isDigit(lastInputCharactor) && hasDot == false;
+        return Character.isDigit(lastInputCharactor) && !hasDot;
     }
 
     private boolean checkLeftBracketIsValidInput(char ch) {

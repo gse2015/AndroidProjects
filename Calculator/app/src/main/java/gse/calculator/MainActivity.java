@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.EmptyStackException;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
                     calc.inputCharactor(btn.getText().charAt(0));
                     result = calc.getExpression();
                 }
-
+                if (result.isEmpty())
+                    result = "0";
                 tvResult.setText(result);
-            } catch (CalcException e) {
+            } catch (CalcException | EmptyStackException | ArithmeticException e) {
                 e.printStackTrace();
             }
         }
