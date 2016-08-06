@@ -1,5 +1,6 @@
 package gse.calculator;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 import java.util.EmptyStackException;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private Button[] btnDigitalAry = new Button[10];
     private Button btnDot;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     result = "0";
                 tvResult.setText(result);
             } catch (CalcException | EmptyStackException | ArithmeticException e) {
+                e.printStackTrace();
+            } catch (Exception e){
                 e.printStackTrace();
             }
         }

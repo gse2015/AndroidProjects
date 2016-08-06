@@ -21,11 +21,10 @@
         android:id="@+id/keyboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tvResult"
-        android:stretchColumns="1">
+        android:layout_below="@+id/tvResult">
 
         <TableRow
-            android:layout_weight="1">>
+            android:layout_weight="1">
             <Button
                 android:id="@+id/btClear"
                 android:text="clear"
@@ -37,100 +36,115 @@
                 android:text="back"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btLeftBracket"
                 android:text="("
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btRightBracket"
                 android:text=")"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
         </TableRow>
         <TableRow
-            android:layout_weight="1">>
+            android:layout_weight="1">
             <Button
                 android:id="@+id/bt7"
                 android:text="7"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt8"
                 android:text="8"
-                android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:textAllCaps="false"
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt9"
                 android:text="9"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btDivide"
                 android:text="/"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
         </TableRow>
         <TableRow
-            android:layout_weight="1">>
+            android:layout_weight="1">
             <Button
                 android:id="@+id/bt4"
                 android:text="4"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt5"
                 android:text="5"
-                android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:textAllCaps="false"
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt6"
                 android:text="6"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btMultiply"
                 android:text="*"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
         </TableRow>
         <TableRow
-            android:layout_weight="1">>
+            android:layout_weight="1">
             <Button
                 android:id="@+id/bt1"
                 android:text="1"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt2"
                 android:text="2"
-                android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:textAllCaps="false"
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt3"
                 android:text="3"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btSubtract"
                 android:text="-"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
         </TableRow>
         <TableRow
             android:layout_weight="1">
@@ -139,25 +153,29 @@
                 android:text="."
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/bt0"
                 android:text="0"
-                android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:textAllCaps="false"
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btEqual"
                 android:text="="
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
             <Button
                 android:id="@+id/btAdd"
                 android:text="+"
                 android:textAllCaps="false"
                 android:layout_weight="1"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                />
         </TableRow>
     </TableLayout>
 </RelativeLayout>
