@@ -2,12 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gse.calculator">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="@string/baidu_appid" />
+
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,6 +36,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdsActivity"></activity>
+        <activity
+            android:name="lt.sh.A.InterstitialAdActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="lt.sh.A.BannerAdActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="lt.sh.A.RSplashActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.miaozi.wenzhuan.WDActivity"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+        <activity
+            android:name="com.miaozi.wenzhuan.WLActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+        <activity
+            android:name="com.miaozi.wenzhuan.WHActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+
+        <service android:name="com.miaozi.wenzhuan.WOService" />
     </application>
 
 </manifest>

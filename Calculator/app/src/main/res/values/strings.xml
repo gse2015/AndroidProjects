@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">实用计算器</string>
+    <string name="baidu_appid">e866cfb0</string>
+    <string name="app_bannerid">2015351</string>
+    <string name="action">打开积分墙</string>
 </resources>

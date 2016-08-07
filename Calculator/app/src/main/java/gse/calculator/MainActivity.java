@@ -1,16 +1,23 @@
 package gse.calculator;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.EmptyStackException;
 
+import com.baidu.mobads.AdSettings;
+import com.baidu.mobads.AppActivity;
+import com.baidu.mobads.BaiduManager;
+import com.baidu.mobads.AdView;
 
-public class MainActivity extends Activity {
+import lt.sh.A.RSplashActivity;
+
+public class MainActivity extends AppCompatActivity {
 
     private Button[] btnDigitalAry = new Button[10];
     private Button btnDot;
@@ -23,13 +30,46 @@ public class MainActivity extends Activity {
     private TextView tvResult;
     private Calculator calc = new Calculator();
     private String result = "";
+    AdView adView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         collectButton();
         tvResult = (TextView) findViewById(R.id.tvResult);
+        initAds();
+        Button btnAds1 = (Button)findViewById(R.id.btnAds1);
+        btnAds1.setOnClickListener(adsClickListener);
+        Button btnAds2 = (Button)findViewById(R.id.btnAds2);
+        btnAds2.setOnClickListener(adsClickListener);
     }
+    @Override
+    protected void onDestroy(){
+        adView.destroy();
+        super.onDestroy();
+    }
+
+    private void initAds(){
+        BaiduManager.init(this);
+        AppActivity.setActionBarColorTheme(AppActivity.ActionBarColorTheme.ACTION_BAR_BLACK_THEME);
+        AdSettings.setKey(new String[]{"移民", "留学", "教育", "edu", "学习"});
+        String adPlaceID = "2015351";
+        adView = new AdView(this, adPlaceID);
+        LinearLayout adsLayout = (LinearLayout)findViewById(R.id.AdsLinearLayout);
+        adsLayout.addView(adView);
+    }
+
+    private View.OnClickListener adsClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int btnID = view.getId();
+            if (btnID == R.id.btnAds1){
+                startActivity(new Intent(MainActivity.this, AdsActivity.class));
+            }else if (btnID == R.id.btnAds2){
+                startActivity(new Intent(MainActivity.this, RSplashActivity.class));
+            }
+        }
+    };
 
     private View.OnClickListener myCliceListener = new View.OnClickListener() {
         @Override
